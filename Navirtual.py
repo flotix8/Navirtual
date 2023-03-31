@@ -9,27 +9,12 @@ class MainWindow(QMainWindow):
         super(MainWindow, self).__init__()
 
         self.browser = QWebEngineView()
+        self.browser.setUrl(QUrl("https://www.google.com/"))
         self.search_engine_url = 'https://www.google.com/search?q={}'
         self.setCentralWidget(self.browser)
 
         navbar = QToolBar()
         self.addToolBar(navbar)
-
-        # Créer la barre de titre avec les onglets
-        self.tab_widget = QTabWidget()
-        self.setCentralWidget(self.tab_widget)
-        self.tab_widget.setTabsClosable(True)
-        self.tab_widget.tabCloseRequested.connect(self.close_tab)
-
-        # Ajouter un bouton pour ajouter un nouvel onglet
-        add_tab_button = QPushButton("Nouvel onglet")
-        add_tab_button.clicked.connect(self.add_new_tab)
-        self.tab_widget.setCornerWidget(add_tab_button)
-
-        # Ajouter un onglet initial
-        self.add_new_tab()
-
-        self.show()
 
 
         # Ajouter un bouton avec une icône personnalisée
@@ -37,7 +22,7 @@ class MainWindow(QMainWindow):
         back_button.setFixedSize(25, 25)
         back_button.setIconSize(back_button.size())
         back_icon = QIcon()
-        back_icon.addPixmap(QPixmap('left_arrow.png').scaledToWidth(25, Qt.SmoothTransformation))
+        back_icon.addPixmap(QPixmap('picture\left_arrow.png').scaledToWidth(25, Qt.SmoothTransformation))
         back_button.setIcon(back_icon)
         back_button.setToolTip('Back')
         back_button.setObjectName('backButton')
@@ -48,7 +33,7 @@ class MainWindow(QMainWindow):
         forward_button.setFixedSize(25, 25)
         forward_button.setIconSize(forward_button.size())
         forward_icon = QIcon()
-        forward_icon.addPixmap(QPixmap('right_arrow.png').scaledToWidth(25, Qt.SmoothTransformation))
+        forward_icon.addPixmap(QPixmap('picture/right_arrow.png').scaledToWidth(25, Qt.SmoothTransformation))
         forward_button.setIcon(forward_icon)
         forward_button.setToolTip('Forward')
         forward_button.setObjectName('forwardButton')
@@ -59,7 +44,7 @@ class MainWindow(QMainWindow):
         reload_button.setFixedSize(25, 25)
         reload_button.setIconSize(forward_button.size())
         reload_icon = QIcon()
-        reload_icon.addPixmap(QPixmap('spinning_arrow.png').scaledToWidth(25, Qt.SmoothTransformation))
+        reload_icon.addPixmap(QPixmap('picture\spinning_arrow.png').scaledToWidth(25, Qt.SmoothTransformation))
         reload_button.setIcon(reload_icon)
         reload_button.setToolTip('Reload')
         reload_button.setObjectName('reloadButton')
@@ -70,7 +55,7 @@ class MainWindow(QMainWindow):
         home_button.setFixedSize(25, 25)
         home_button.setIconSize(forward_button.size())
         home_icon = QIcon()
-        home_icon.addPixmap(QPixmap('home.png').scaledToWidth(25, Qt.SmoothTransformation))
+        home_icon.addPixmap(QPixmap('picture\home.png').scaledToWidth(25, Qt.SmoothTransformation))
         home_button.setIcon(home_icon)
         home_button.setToolTip('Home')
         home_button.setObjectName('homeButton')
@@ -99,7 +84,7 @@ class MainWindow(QMainWindow):
         menu_button.setFixedSize(25, 25)
         menu_button.setIconSize(forward_button.size())
         menu_icon = QIcon()
-        menu_icon.addPixmap(QPixmap('menu.png').scaledToWidth(25, Qt.SmoothTransformation))
+        menu_icon.addPixmap(QPixmap('picture\menu.png').scaledToWidth(25, Qt.SmoothTransformation))
         menu_button.setIcon(menu_icon)
         menu_button.setToolTip('Menu')
         menu_button.setObjectName('menuButton')
@@ -192,23 +177,6 @@ class MainWindow(QMainWindow):
         search_query = self.url_bar.text()
         url = self.search_engine_url.format(search_query)
         self.browser.load(QUrl(url))
-
-    def add_new_tab(self):
-        # Créer un nouvel onglet et l'ajouter à la barre de titre
-        new_tab = QWidget()
-        self.tab_widget.addTab(new_tab, "Nouvel onglet")
-
-        # Ajouter une disposition pour les éléments dans l'onglet
-        layout = QVBoxLayout()
-        new_tab.setLayout(layout)
-
-    def close_tab(self, index):
-        # Fermer l'onglet spécifié par l'index
-        self.tab_widget.removeTab(index)
-
-    def load_url(self, url):
-        # Charger l'URL spécifiée dans le navigateur
-        print("Chargement de l'URL:", url)
 
 app = QApplication(sys.argv)
 window = MainWindow()
