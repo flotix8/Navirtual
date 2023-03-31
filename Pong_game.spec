@@ -4,7 +4,7 @@
 block_cipher = None
 
 
-a = Analysis(['Pong_game.py'],
+a = Analysis(['Navirtual.py'],
              pathex=[],
              binaries=[],
              datas=[],
@@ -24,7 +24,7 @@ exe = EXE(pyz,
           a.scripts, 
           [],
           exclude_binaries=True,
-          name='Pong',
+          name='Navirtual',
           debug=False,
           bootloader_ignore_signals=False,
           strip=False,
@@ -33,7 +33,7 @@ exe = EXE(pyz,
           disable_windowed_traceback=False,
           target_arch=None,
           codesign_identity=None,
-          entitlements_file=None , icon='pong.ico')
+          entitlements_file=None , icon='Navirtual.ico')
 coll = COLLECT(exe,
                a.binaries,
                a.zipfiles,
