@@ -21,12 +21,12 @@ AppUpdatesURL={#MyAppURL}
 DefaultDirName={autopf}\{#MyAppName}
 DisableDirPage=yes
 DisableProgramGroupPage=yes
-LicenseFile=C:\Users\flori\Documents\Navirtual\License.txt
+LicenseFile=C:\Users\flori\Documents\Navirtual-main\License.txt
 ; Remove the following line to run in administrative install mode (install for all users.)
 PrivilegesRequired=lowest
-OutputDir=C:\Users\flori\Documents\Navirtual\dist\
+OutputDir=C:\Users\flori\Documents\Navirtual-main\dist\
 OutputBaseFilename=Pong-setup-{#MyAppVersion}
-SetupIconFile=C:\Users\flori\Documents\Navirtual\Navirtual.ico
+SetupIconFile=C:\Users\flori\Documents\Navirtual-main\Navirtual.ico
 Compression=lzma
 SolidCompression=yes
 WizardStyle=modern
@@ -58,8 +58,8 @@ Name: "turkish"; MessagesFile: "compiler:Languages\Turkish.isl"
 Name: "ukrainian"; MessagesFile: "compiler:Languages\Ukrainian.isl"
 
 [Files]
-Source: "C:\Users\flori\Documents\Navirtual\Navirtual.exe"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\Users\flori\Documents\Navirtual\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs
+Source: "C:\Users\flori\Documents\Navirtual-main\Navirtual.exe"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\Users\flori\Documents\Navirtual-main\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
 
 [Icons]
