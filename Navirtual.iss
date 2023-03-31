@@ -25,7 +25,7 @@ LicenseFile=C:\Users\flori\Documents\Navirtual-main\License.txt
 ; Remove the following line to run in administrative install mode (install for all users.)
 PrivilegesRequired=lowest
 OutputDir=C:\Users\flori\Documents\Navirtual-main\dist\
-OutputBaseFilename=Pong-setup-{#MyAppVersion}
+OutputBaseFilename=Navirtual-setup-{#MyAppVersion}
 SetupIconFile=C:\Users\flori\Documents\Navirtual-main\Navirtual.ico
 Compression=lzma
 SolidCompression=yes
